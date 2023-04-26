@@ -24,22 +24,29 @@
         <h1>Generate a <br><span class="highlight">random password</span></h1>
         <h2>Never use an insecure password again.</h2>
 
-        <div class="inline">
+        <div class="space"></div>
+
+        <div>
             <div>
-                <p>Amount of passwords</p>
-                <input id="password-count" type="number" min="1" max="4" value="1">
+                <p>Amount of passwords (1 - 4)</p>
+                <input id="password-count" type="number" min="1" max="4" value="1" onchange="validateInputRange(this, 1, 4)">
             </div>
             <div>
-                <p>Amount of characters (min. 16)</p>
-                <input id="character-count" type="number" min="16" max="32" value="25">
+                <p>Amount of characters (16 - 32)</p>
+                <input id="character-count" type="number" min="16" max="32" value="25" onchange="validateInputRange(this, 16, 32)">
             </div>
         </div>
+        
         <button onclick="generatePasswords()">Generate passwords</button>
+
+        <div class="space"></div>
 
         <hr class="solid-divider">
 
-        <div id="generated-passwords" class="grid">
-            <p class="generated-password-field"></p>
+        <div class="center">
+            <div id="generated-passwords" class="grid">
+                
+            </div>
         </div>
     </div>
 
