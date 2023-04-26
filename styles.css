@@ -5,7 +5,7 @@
     --10-hover: #0d9769;
     --10-active: #0b7250;
     --header: #ffffff;
-    --font: #c5c5c5;
+    --font: #f0f0f0;
 }
 
 body {
@@ -15,6 +15,7 @@ body {
     padding: 8rem 4rem;
 
     background: var(--60);
+    color: var(--font);
 
     max-width: 800px;
     max-height: 600px;
@@ -73,7 +74,6 @@ h2 {
     border-radius: 10px;
 
     background: var(--30);
-
     color: var(--10);
 
     padding: 1rem;
@@ -95,6 +95,7 @@ input {
     border-radius: 10px;
 
     background: var(--30);
+    color: inherit;
 
     width: 100px;
     height: 25px;
@@ -108,9 +109,12 @@ button {
     border: none;
     border-radius: 10px;
 
-    background: var(--10);
+    background: var(--30);
+    color: var(--10);
 
     font-size: inherit;
+    font-weight: normal;
+
     padding: 1rem;
 }
 
