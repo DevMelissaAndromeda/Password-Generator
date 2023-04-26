@@ -9,6 +9,14 @@ const generatedPasswordsEl = document.getElementById("generated-passwords");
 
 const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
 
+
+function copyToClipboard(value)
+{
+    navigator.clipboard.writeText(value);
+
+    console.log('Copied "' + value + '" to Clipboard.')
+}
+
 function validateInputRange(inputEl, min, max)
 {
     inputEl.value = clamp(inputEl.value, min, max);
@@ -29,6 +37,7 @@ function addNewPassword(newPassword)
     generatedPasswordsEl.append(newParagraphEl);
 
     newParagraphEl.className += "generated-password-field";
+    newParagraphEl.setAttribute( "onclick", "copyToClipboard(this.innerHTML)" );
 }
 
 function generatePasswords()

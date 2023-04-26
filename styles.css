@@ -146,6 +146,14 @@ button:active {
     line-height: 10px;
 }
 
+.generated-password-field:hover {
+    background-color: var(--10-hover);
+}
+
+.generated-password-field:active {
+    background-color: var(--10-active);
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1 1;
