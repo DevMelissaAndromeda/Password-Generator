@@ -1,9 +1,9 @@
 :root {
     --60: #1f2937;
     --30: #273549;
-    --10: #10b981;
-    --10-hover: #0d9769;
-    --10-active: #0b7250;
+    --10: #0da673;
+    --10-hover: #0b8159;
+    --10-active: #096345;
     --header: #ffffff;
     --font: #f0f0f0;
 }
@@ -109,11 +109,11 @@ button {
     border: none;
     border-radius: 10px;
 
-    background: var(--30);
-    color: var(--10);
+    background: var(--10);
+    color: var(--font);
 
     font-size: inherit;
-    font-weight: normal;
+    font-weight: bold;
 
     padding: 1rem;
 }
