@@ -27,14 +27,14 @@
         <div class="inline">
             <div>
                 <p>Amount of passwords</p>
-                <input id="password-amount" type="number">
+                <input id="password-amount" type="number" min="1" max="4" value="1">
             </div>
             <div>
                 <p>Amount of characters (min. 16)</p>
-                <input id="password-amount" type="number">
+                <input id="password-amount" type="number" min="16" max="32" value="25">
             </div>
         </div>
-        <button onclick="generatePasswords">Generate passwords</button>
+        <button onclick="generatePasswords()">Generate passwords</button>
 
         <hr class="solid-divider">
 
