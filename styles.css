@@ -151,6 +151,7 @@ button:active {
 
 .generated-password-field:hover {
     background-color: var(--10-hover);
+    cursor: pointer;
 }
 
 .generated-password-field:active {
