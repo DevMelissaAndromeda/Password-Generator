@@ -74,6 +74,8 @@ h2 {
 
     background: var(--30);
 
+    color: var(--10);
+
     padding: 1rem;
     
     width: 36ch;
