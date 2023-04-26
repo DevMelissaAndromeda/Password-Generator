@@ -1,3 +1,17 @@
+@font-face {
+    font-family: Gilroy-Light;
+    src: url("resources/fonts/Gilroy-Light.otf");
+}
+
+@font-face {
+    font-family: Gilroy-ExtraBold;
+    src: url("resources/fonts/Gilroy-ExtraBold.otf");
+}
+
+
+
+
+
 :root {
     --60: #1f2937;
     --30: #273549;
@@ -7,6 +21,10 @@
     --header: #ffffff;
     --font: #f0f0f0;
 }
+
+
+
+
 
 body {
     border: solid 5px var(--header);
@@ -20,8 +38,68 @@ body {
     max-width: 800px;
     max-height: 600px;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
     font-size: 18px;
+}
+
+h1 {
+    margin: 0;
+
+    font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+}
+
+h2 {
+    margin: 10px 0;
+
+    color: var(--font);
+
+    font-size: 2rem;
+}
+
+p {
+    color: var(--font);
+}
+
+input {
+    border: solid 2px var(--10);
+    border-radius: 10px;
+
+    background: var(--30);
+    color: inherit;
+
+    width: 100px;
+    height: 25px;
+
+    text-align: center;
+}
+
+button {
+    margin: 1rem 0;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--10);
+    color: var(--font);
+
+    font-size: inherit;
+    font-weight: bold;
+
+    padding: 1rem;
+}
+
+
+
+
+
+button:hover {
+    background: var(--10-hover);
+    cursor: pointer;
+}
+
+button:active {
+    background: var(--10-active);
 }
 
 .space {
@@ -33,23 +111,12 @@ body {
     justify-content: space-evenly;
 }
 
-h1 {
-    margin: 0;
-
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-h2 {
-    margin: 10px 0;
-
-    font-size: 1.5rem;
-    font-weight: 100;
-    color: var(--font);
-}
-
 .highlight {
     color: var(--10);
+}
+
+.underline {
+    border-bottom: solid 2px var(--font);
 }
 
 .block {
@@ -83,46 +150,4 @@ h2 {
 
     text-align: center;
     line-height: 10px;
-}
-
-p {
-    font-weight: 100;
-    color: var(--font);
-}
-
-input {
-    border: solid 2px var(--10);
-    border-radius: 10px;
-
-    background: var(--30);
-    color: inherit;
-
-    width: 100px;
-    height: 25px;
-
-    text-align: center;
-}
-
-button {
-    margin: 1rem 0;
-
-    border: none;
-    border-radius: 10px;
-
-    background: var(--10);
-    color: var(--font);
-
-    font-size: inherit;
-    font-weight: bold;
-
-    padding: 1rem;
-}
-
-button:hover {
-    background: var(--10-hover);
-    cursor: pointer;
-}
-
-button:active {
-    background: var(--10-active);
 }
