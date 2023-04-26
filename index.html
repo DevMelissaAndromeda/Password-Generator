@@ -27,13 +27,13 @@
         <div class="space"></div>
 
         <div class="grid">
-            <div class="grid column1">
-                <p class="grid row1">Amount of passwords ( 1 - 4 )</p>
-                <p class="grid row2">Amount of characters ( 16 - 32 )</p>
+            <div style="--current-column: 1" class="grid column">
+                <p style="--current-row: 1" class="grid row1">Amount of passwords ( 1 - 4 )</p>
+                <p style="--current-row: 2" class="grid row2">Amount of characters ( 16 - 32 )</p>
             </div>
-            <div class="grid column2">
-                <input class="grid row1" id="password-count" type="number" min="1" max="10" value="1" onchange="validateInputRange(this, 1, 10)">
-                <input class="grid row2" id="character-count" type="number" min="16" max="32" value="25" onchange="validateInputRange(this, 16, 32)">
+            <div style="--current-column: 2" class="grid column">
+                <input style="--current-row: 1" class="grid row" id="password-count" type="number" min="1" max="10" value="1" onchange="validateInputRange(this, 1, 10)">
+                <input style="--current-row: 2" class="grid row" id="character-count" type="number" min="16" max="32" value="25" onchange="validateInputRange(this, 16, 32)">
             </div>
         </div>
 

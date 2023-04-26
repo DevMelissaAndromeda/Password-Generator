@@ -20,6 +20,9 @@
     --10-active: #096345;
     --header: #ffffff;
     --font: #f0f0f0;
+
+    --current-row: 1;
+    --current-column: 1;
 }
 
 
@@ -161,26 +164,14 @@ button:active {
     grid-gap: 1ch;
 }
 
-.column1 {
-    grid-column: 1;
+.column {
+    grid-column: var(--current-column);
     width: auto;
     height: auto;
 }
 
-.column2 {
-    grid-column: 2;
-    width: auto;
-    height: auto;
-}
-
-.row1 {
-    grid-row: 1;
-    width: auto;
-    height: auto;
-}
-
-.row2 {
-    grid-row: 2;
+.row {
+    grid-row: var(--current-row);
     width: auto;
     height: auto;
 }
