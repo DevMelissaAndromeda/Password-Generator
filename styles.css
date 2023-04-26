@@ -36,7 +36,6 @@ body {
     color: var(--font);
 
     max-width: 800px;
-    max-height: 600px;
 
     font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
     font-size: 18px;
@@ -61,7 +60,13 @@ p {
     color: var(--font);
 }
 
+span {
+    color: var(--font);
+}
+
 input {
+    display: block;
+
     border: solid 2px var(--10);
     border-radius: 10px;
 
@@ -71,6 +76,7 @@ input {
     width: 100px;
     height: 25px;
 
+    font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
@@ -89,10 +95,6 @@ button {
     padding: 1rem;
 }
 
-
-
-
-
 button:hover {
     background: var(--10-hover);
     cursor: pointer;
@@ -101,6 +103,10 @@ button:hover {
 button:active {
     background: var(--10-active);
 }
+
+
+
+
 
 .space {
     margin: 4rem 0;
@@ -123,19 +129,6 @@ button:active {
     display: block;
 }
 
-.inline {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.grid {
-    display: grid;
-    grid-template-rows: 1ch 1ch;
-    grid-template-columns: 36ch 36ch;
-    grid-column-gap: 3.5rem;
-    grid-row-gap: 3.5rem;
-}
-
 .generated-password-field {
     border: none;
     border-radius: 10px;
@@ -148,6 +141,38 @@ button:active {
     width: 36ch;
     height: 1ch;
 
+    font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
     text-align: center;
     line-height: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1 1;
+    grid-template-rows: 4ch 4ch;
+    grid-gap: 1ch;
+}
+
+.column1 {
+    grid-column: 1;
+    width: auto;
+    height: auto;
+}
+
+.column2 {
+    grid-column: 2;
+    width: auto;
+    height: auto;
+}
+
+.row1 {
+    grid-row: 1;
+    width: auto;
+    height: auto;
+}
+
+.row2 {
+    grid-row: 2;
+    width: auto;
+    height: auto;
 }

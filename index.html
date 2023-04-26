@@ -26,16 +26,18 @@
 
         <div class="space"></div>
 
-        <div>
-            <div>
-                <p>Amount of passwords ( 1 - 4 )</p>
-                <input id="password-count" type="number" min="1" max="4" value="1" onchange="validateInputRange(this, 1, 4)">
+        <div class="grid">
+            <div class="grid column1">
+                <p class="grid row1">Amount of passwords ( 1 - 4 )</p>
+                <p class="grid row2">Amount of characters ( 16 - 32 )</p>
             </div>
-            <div>
-                <p>Amount of characters ( 16 - 32 )</p>
-                <input id="character-count" type="number" min="16" max="32" value="25" onchange="validateInputRange(this, 16, 32)">
+            <div class="grid column2">
+                <input class="grid row1" id="password-count" type="number" min="1" max="4" value="1" onchange="validateInputRange(this, 1, 4)">
+                <input class="grid row2" id="character-count" type="number" min="16" max="32" value="25" onchange="validateInputRange(this, 16, 32)">
             </div>
         </div>
+
+        <div class="space"></div>
         
         <button onclick="generatePasswords()">Generate passwords</button>
 
