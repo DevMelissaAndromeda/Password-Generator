@@ -37,7 +37,7 @@ body {
     background: var(--60);
 }
 
-.actual-body {
+.centered-body {
     border: solid 5px var(--header);
     border-radius: 25px;
 
