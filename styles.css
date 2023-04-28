@@ -30,10 +30,18 @@
 
 
 body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    background: var(--60);
+}
+
+.actual-body {
     border: solid 5px var(--header);
     border-radius: 25px;
 
-    padding: 8rem 4rem;
+    padding: 8rem 4rem 4rem 4rem;
 
     background: var(--60);
     color: var(--font);
@@ -141,7 +149,7 @@ button:active {
 
     padding: 1rem;
     
-    width: 28ch;
+    width: 36ch;
     height: 1ch;
 
     font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
