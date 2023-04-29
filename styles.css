@@ -30,6 +30,8 @@
 
 
 body {
+    overflow-x: hidden;
+
     display: flex;
     justify-content: center;
     align-content: center;
@@ -183,4 +185,39 @@ button:active {
     grid-row: var(--current-row);
     width: auto;
     height: auto;
+}
+
+#popup {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    max-width: inherit;
+
+    text-align: center;
+
+    bottom: 20%;
+
+    padding: 1rem 2rem 1rem 1.5rem;
+
+    background: var(--10);
+    border-radius: 10px;
+
+    opacity: 0;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+    }
+    25% {
+        opacity: 100%;
+    }
+    75% {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0;
+    }
 }

@@ -6,15 +6,28 @@ const characterCountEl = document.getElementById("character-count");
 
 const generatedPasswordsEl = document.getElementById("generated-passwords");
 
+const popupEl = document.getElementById("popup");
+
 
 const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
 
+function wait(ms){
+    var start = new Date().getTime();
+    var end = start;
+    while (end < start + ms) {
+        end = new Date().getTime();
+    }
+ }
+
+const popup = async (message) => {
+    
+}
 
 function copyToClipboard(value)
 {
     navigator.clipboard.writeText(value);
 
-    console.log('Copied "' + value + '" to Clipboard.')
+    popup('Copied password to Clipboard.');
 }
 
 function validateInputRange(inputEl, min, max)
