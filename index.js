@@ -11,23 +11,19 @@ const popupEl = document.getElementById("popup");
 
 const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
 
-function wait(ms){
-    var start = new Date().getTime();
-    var end = start;
-    while (end < start + ms) {
-        end = new Date().getTime();
-    }
- }
 
-const popup = async (message) => {
-    
+function popup(message) {
+    //document.removeChild(popupEl);
+    const newPopupEl = document.createElement('h1');
+    newPopupEl.className = 'popup';
+    //newPopupEl.appendChild()
 }
 
 function copyToClipboard(value)
 {
     navigator.clipboard.writeText(value);
 
-    popup('Copied password to Clipboard.');
+    //popup('Copied password to Clipboard.');
 }
 
 function validateInputRange(inputEl, min, max)
@@ -42,9 +38,12 @@ function clearPreviousPasswords()
 
 function addNewPassword(newPassword)
 {
-    generatedPasswordsEl.innerHTML += '<p class="generated-password-field" onclick=copyToClipboard(this.innerHTML)>' 
-                                        + newPassword 
-                                        + '</p>';
+    const newGeneratedPasswordEl = document.createElement('p');
+    newGeneratedPasswordEl.textContent = newPassword;
+    newGeneratedPasswordEl.className = 'generated-password-field';
+    newGeneratedPasswordEl.addEventListener('click', function() { copyToClipboard(newPassword); });
+    
+    generatedPasswordsEl.append(newGeneratedPasswordEl);
 }
 
 function generatePasswords()
