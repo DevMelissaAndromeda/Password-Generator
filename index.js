@@ -29,15 +29,9 @@ function clearPreviousPasswords()
 
 function addNewPassword(newPassword)
 {
-    let newParagraphEl = document.createElement("p");
-    const textNodeEl = document.createTextNode(newPassword);
-
-    newParagraphEl.append(textNodeEl);
-
-    generatedPasswordsEl.append(newParagraphEl);
-
-    newParagraphEl.className += "generated-password-field";
-    newParagraphEl.setAttribute( "onclick", "copyToClipboard(this.innerHTML)" );
+    generatedPasswordsEl.innerHTML += '<p class="generated-password-field" onclick=copyToClipboard(this.innerHTML)>' 
+                                        + newPassword 
+                                        + '</p>';
 }
 
 function generatePasswords()
