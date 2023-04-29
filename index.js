@@ -1,29 +1,34 @@
 const characters =  ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
 
+const actualBodyEl = document.getElementById('centered-body');
+
 const passwordCountEl = document.getElementById("password-count");
 const characterCountEl = document.getElementById("character-count");
 
 const generatedPasswordsEl = document.getElementById("generated-passwords");
-
-const popupEl = document.getElementById("popup");
 
 
 const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
 
 
 function popup(message) {
-    //document.removeChild(popupEl);
-    const newPopupEl = document.createElement('h1');
-    newPopupEl.className = 'popup';
-    //newPopupEl.appendChild()
+    const old_PopupEl = document.getElementById("popup");
+    actualBodyEl.removeChild(old_PopupEl);
+
+    const new_PopupEl = document.createElement('h1');
+    new_PopupEl.textContent = message;
+    new_PopupEl.id = 'popup';
+    new_PopupEl.style.animation = 'popup 3s forwards';
+
+    actualBodyEl.appendChild(new_PopupEl);
 }
 
 function copyToClipboard(value)
 {
     navigator.clipboard.writeText(value);
 
-    //popup('Copied password to Clipboard.');
+    popup('Copied password to Clipboard.');
 }
 
 function validateInputRange(inputEl, min, max)
