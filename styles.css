@@ -37,6 +37,8 @@ body {
     align-content: center;
 
     background: var(--60);
+
+    font-size: 18px;
 }
 
 #centered-body {
@@ -48,10 +50,9 @@ body {
     background: var(--60);
     color: var(--font);
 
-    max-width: 800px;
+    width: 600px;
 
     font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
-    font-size: 18px;
 }
 
 h1 {
