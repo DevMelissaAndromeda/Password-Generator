@@ -39,6 +39,7 @@ body {
     background: var(--60);
 
     font-size: 18px;
+    font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
 }
 
 #centered-body {
@@ -51,8 +52,6 @@ body {
     color: var(--font);
 
     width: 600px;
-
-    font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
 }
 
 h1 {
