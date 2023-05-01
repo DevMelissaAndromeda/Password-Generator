@@ -21,8 +21,11 @@
     --header: #ffffff;
     --font: #f0f0f0;
 
+    --current-mobile-row: 1;
     --current-row: 1;
     --current-column: 1;
+
+    font-size: 18px;
 }
 
 
@@ -38,7 +41,6 @@ body {
 
     background: var(--60);
 
-    font-size: 18px;
     font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
 }
 
@@ -46,19 +48,17 @@ body {
     border: solid 5px var(--header);
     border-radius: 25px;
 
-    padding: 8rem 4rem 4rem 4rem;
+    padding: clamp(1rem, 4vw + 1rem, 4rem);;
 
     background: var(--60);
     color: var(--font);
-
-    width: 600px;
 }
 
 h1 {
     margin: 0;
 
     font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
-    font-size: 3rem;
+    font-size: clamp(1rem, 4vw + 1rem, 3rem);
 }
 
 h2 {
@@ -66,11 +66,13 @@ h2 {
 
     color: var(--font);
 
-    font-size: 2rem;
+    font-size: clamp(1rem, 2vw + 1rem, 2rem);
 }
 
 p {
     color: var(--font);
+
+    font-size: clamp(0.5rem, 2vw + 0.5rem, 2rem);
 }
 
 span {
@@ -168,25 +170,6 @@ button:active {
     background-color: var(--10-active);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1 1;
-    grid-template-rows: 4ch 4ch;
-    grid-gap: 1ch;
-}
-
-.column {
-    grid-column: var(--current-column);
-    width: auto;
-    height: auto;
-}
-
-.row {
-    grid-row: var(--current-row);
-    width: auto;
-    height: auto;
-}
-
 #popup {
     pointer-events: none; 
 
@@ -221,5 +204,50 @@ button:active {
     }
     to {
         opacity: 0;
+    }
+}
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    grid-column: var(--current-column);
+    width: auto;
+    height: auto;
+    background: rgb(calc(150 * var(--current-column)), calc(150 * var(--current-column)), calc(150 * var(--current-column)));
+}
+
+.row {
+    grid-row: var(--current-row);
+    width: auto;
+    height: auto;
+    background: rgb(calc(50 * var(--current-row)), calc(100 * var(--current-row)), calc(100 * var(--current-row)));
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1rem 1rem 1rem 1rem;
+    }
+
+    .column {
+        grid-row: var(--current-mobile-row);
+    }
+
+    .row {
+        grid-row: var(--current-mobile-row);
     }
 }

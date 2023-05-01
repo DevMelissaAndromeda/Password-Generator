@@ -26,15 +26,14 @@
 
         <div class="space"></div>
 
-        <div class="grid">
-            <div style="--current-column: 1" class="grid column">
-                <p style="--current-row: 1" class="grid row">Amount of passwords ( 1 - 10 )</p>
-                <p style="--current-row: 2" class="grid row">Amount of characters ( 16 - 32 )</p>
-            </div>
-            <div style="--current-column: 2" class="grid column">
-                <input style="--current-row: 1" class="grid row" id="password-count" type="number" min="1" max="10" value="1" onchange="validateInputRange(this, 1, 10)">
-                <input style="--current-row: 2" class="grid row" id="character-count" type="number" min="16" max="32" value="25" onchange="validateInputRange(this, 16, 32)">
-            </div>
+        <div class="grid-container">
+            <div style="--current-column: 1; --current-mobile-row: 1;" class="grid grid-item column"></div>
+            <p style="--current-row: 1; --current-mobile-row: 2;" class="grid grid-item row">Amount of passwords ( 1 - 10 )</p>
+            <p style="--current-row: 2; --current-mobile-row: 3;" class="grid grid-item row">Amount of characters ( 16 - 32 )</p>
+            
+            <div style="--current-column: 2; --current-mobile-row: 4;" class="grid grid-item column"></div>
+            <input style="--current-row: 1; --current-mobile-row: 5;" class="grid grid-item row" id="password-count" type="number" min="1" max="10" value="1" onchange="validateInputRange(this, 1, 10)">
+            <input style="--current-row: 2; --current-mobile-row: 6;" class="grid grid-item row" id="character-count" type="number" min="16" max="32" value="25" onchange="validateInputRange(this, 16, 32)">
         </div>
 
         <div class="space"></div>
