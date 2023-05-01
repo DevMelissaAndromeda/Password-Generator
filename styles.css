@@ -21,9 +21,9 @@
     --header: #ffffff;
     --font: #f0f0f0;
 
-    --current-mobile-row: 1;
-    --current-row: 1;
-    --current-column: 1;
+    --current-grid-item: 1;
+    --current-grid-column: 1;
+    --current-grid-row: 1;
 
     font-size: 18px;
 }
@@ -213,41 +213,23 @@ button:active {
 
 .grid-container {
     display: grid;
+    grid-gap: 1rem;
+    
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 1rem;
 }
 
 .grid-item {
     display: flex;
     align-items: center;
-}
 
-.column {
-    grid-column: var(--current-column);
     width: auto;
     height: auto;
-    background: rgb(calc(150 * var(--current-column)), calc(150 * var(--current-column)), calc(150 * var(--current-column)));
-}
-
-.row {
-    grid-row: var(--current-row);
-    width: auto;
-    height: auto;
-    background: rgb(calc(50 * var(--current-row)), calc(100 * var(--current-row)), calc(100 * var(--current-row)));
 }
 
 @media only screen and (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: 1rem 1rem 1rem 1rem;
-    }
-
-    .column {
-        grid-row: var(--current-mobile-row);
-    }
-
-    .row {
-        grid-row: var(--current-mobile-row);
     }
 }
