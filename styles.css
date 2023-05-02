@@ -13,13 +13,13 @@
 
 
 :root {
-    --60: #1f2937;
-    --30: #273549;
-    --10: #0da673;
-    --10-hover: #0b8159;
-    --10-active: #096345;
-    --header: #ffffff;
-    --font: #f0f0f0;
+    --color-60: #1f2937;
+    --color-30: #273549;
+    --color-10: #0da673;
+    --color-10-hover: #0b8159;
+    --color-10-active: #096345;
+    --color-header: #ffffff;
+    --color-font: #f0f0f0;
 
     font-size: 18px;
 }
@@ -28,26 +28,35 @@
 
 
 
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
 body {
     overflow-x: hidden;
+
+    width: inherit;
+    height: inherit;
 
     display: flex;
     justify-content: center;
     align-content: center;
 
-    background: var(--60);
+    background: var(--color-60);
 
     font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
 }
 
 #centered-body {
-    border: solid 5px var(--header);
+    border: solid 5px var(--color-header);
     border-radius: 25px;
 
     padding: clamp(1rem, 4vw + 1rem, 4rem);;
 
-    background: var(--60);
-    color: var(--font);
+    background: var(--color-60);
+    color: var(--color-font);
 }
 
 h1 {
@@ -60,28 +69,28 @@ h1 {
 h2 {
     margin: 10px 0;
 
-    color: var(--font);
+    color: var(--color-font);
 
     font-size: clamp(1rem, 2vw + 1rem, 2rem);
 }
 
 p {
-    color: var(--font);
+    color: var(--color-font);
 
     font-size: clamp(0.5rem, 2vw + 0.5rem, 2rem);
 }
 
 span {
-    color: var(--font);
+    color: var(--color-font);
 }
 
 input {
     display: block;
 
-    border: solid 2px var(--10);
+    border: solid 2px var(--color-10);
     border-radius: 10px;
 
-    background: var(--30);
+    background: var(--color-30);
     color: inherit;
 
     width: 100px;
@@ -97,8 +106,8 @@ button {
     border: none;
     border-radius: 10px;
 
-    background: var(--10);
-    color: var(--font);
+    background: var(--color-10);
+    color: var(--color-font);
 
     font-size: inherit;
     font-weight: bold;
@@ -107,12 +116,12 @@ button {
 }
 
 button:hover {
-    background: var(--10-hover);
+    background: var(--color-10-hover);
     cursor: pointer;
 }
 
 button:active {
-    background: var(--10-active);
+    background: var(--color-10-active);
 }
 
 
@@ -129,11 +138,11 @@ button:active {
 }
 
 .highlight {
-    color: var(--10);
+    color: var(--color-10);
 }
 
 .underline {
-    border-bottom: solid 2px var(--font);
+    border-bottom: solid 2px var(--color-font);
 }
 
 .block {
@@ -144,8 +153,8 @@ button:active {
     border: none;
     border-radius: 10px;
 
-    background: var(--30);
-    color: var(--10);
+    background: var(--color-30);
+    color: var(--color-10);
 
     padding: 1rem;
     
@@ -158,12 +167,12 @@ button:active {
 }
 
 .generated-password-field:hover {
-    background-color: var(--10-hover);
+    background-color: var(--color-10-hover);
     cursor: pointer;
 }
 
 .generated-password-field:active {
-    background-color: var(--10-active);
+    background-color: var(--color-10-active);
 }
 
 #popup {
@@ -182,7 +191,7 @@ button:active {
 
     padding: 1rem 2rem 1rem 1.5rem;
 
-    background: var(--10);
+    background: var(--color-10);
     border-radius: 10px;
 
     opacity: 0;
@@ -215,7 +224,7 @@ button:active {
     grid-template-rows: 1fr 1fr;
 }
 
-.grid-item {
+.grid__item {
     display: flex;
     align-items: center;
 
