@@ -21,10 +21,6 @@
     --header: #ffffff;
     --font: #f0f0f0;
 
-    --current-grid-item: 1;
-    --current-grid-column: 1;
-    --current-grid-row: 1;
-
     font-size: 18px;
 }
 
