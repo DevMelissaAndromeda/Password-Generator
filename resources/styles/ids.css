@@ -3,17 +3,6 @@
 
 
 
-
-#centered-body {
-    border: solid 5px var(--color-header);
-    border-radius: 25px;
-
-    padding: clamp(1rem, 4vw + 1rem, 4rem);;
-
-    background: var(--color-60);
-    color: var(--color-font);
-}
-
 #popup {
     pointer-events: none; 
 

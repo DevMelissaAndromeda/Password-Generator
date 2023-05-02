@@ -17,14 +17,12 @@ html {
 body {
     overflow-x: hidden;
 
-    width: inherit;
-    height: inherit;
-
     display: flex;
     justify-content: center;
     align-content: center;
 
     background: var(--color-60);
+    color: var(--color-font);
 
     font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
 }
