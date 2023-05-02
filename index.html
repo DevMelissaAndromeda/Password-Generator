@@ -35,11 +35,35 @@
 
 
         <div class="grid-container">
-            <p class="grid__item">Amount of passwords ( 1 - 10 )</p>
-            <input class="grid__item" id="password-count" type="number" min="1" max="10" value="1" onchange="validateInputRange(this, 1, 10)">
+
+            <p class="grid__item">
+                Amount of passwords ( 1 - 10 )
+            </p>
+
+            <input 
+                class="grid__item" 
+                id="password-count" 
+                type="number" 
+                min="1" max="10" 
+                value="1" 
+                onchange="validateInputRange(this, 1, 10)"
+            >
             
-            <p class="grid__item">Amount of characters ( 16 - 32 )</p>
-            <input class="grid__item" id="character-count" type="number" min="16" max="32" value="25" onchange="validateInputRange(this, 16, 32)">
+            <!-- -->
+
+            <p class="grid__item">
+                Amount of characters ( 16 - 32 )
+            </p>
+            
+            <input 
+                class="grid__item" 
+                id="character-count" 
+                type="number" 
+                min="16" max="32" 
+                value="25" 
+                onchange="validateInputRange(this, 16, 32)"
+            >
+
         </div>
 
         
@@ -47,7 +71,7 @@
         <div class="space"></div>
         <!-- -->
         
-        
+
         <button onclick="generatePasswords()">Generate passwords</button>
 
         <hr class="solid-divider">
