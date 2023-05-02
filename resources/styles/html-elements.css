@@ -1,0 +1,95 @@
+@import "variables.css";
+@import "animations.css";
+
+
+
+
+:root {
+    font-size: 18px;
+}
+
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+
+    width: inherit;
+    height: inherit;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    background: var(--color-60);
+
+    font-family: Gilroy-Light, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 0;
+
+    font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
+    font-size: clamp(1rem, 4vw + 1rem, 3rem);
+}
+
+h2 {
+    margin: 10px 0;
+
+    color: var(--color-font);
+
+    font-size: clamp(1rem, 2vw + 1rem, 2rem);
+}
+
+p {
+    color: var(--color-font);
+
+    font-size: clamp(0.5rem, 2vw + 0.5rem, 2rem);
+}
+
+span {
+    color: var(--color-font);
+}
+
+input {
+    display: block;
+
+    border: solid 2px var(--color-10);
+    border-radius: 10px;
+
+    background: var(--color-30);
+    color: inherit;
+
+    width: 100px;
+    height: 25px;
+
+    font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+button {
+    margin: 1rem 0;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--color-10);
+    color: var(--color-font);
+
+    font-size: inherit;
+    font-weight: bold;
+
+    padding: 1rem;
+}
+
+button:hover {
+    background: var(--color-10-hover);
+    cursor: pointer;
+}
+
+button:active {
+    background: var(--color-10-active);
+}

@@ -1,0 +1,37 @@
+@import "variables.css";
+@import "animations.css";
+
+
+
+
+#centered-body {
+    border: solid 5px var(--color-header);
+    border-radius: 25px;
+
+    padding: clamp(1rem, 4vw + 1rem, 4rem);;
+
+    background: var(--color-60);
+    color: var(--color-font);
+}
+
+#popup {
+    pointer-events: none; 
+
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    max-width: inherit;
+
+    text-align: center;
+
+    bottom: 20%;
+
+    padding: 1rem 2rem 1rem 1.5rem;
+
+    background: var(--color-10);
+    border-radius: 10px;
+
+    opacity: 0;
+}

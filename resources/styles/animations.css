@@ -1,0 +1,14 @@
+@keyframes popup {
+    from {
+        opacity: 0;
+    }
+    25% {
+        opacity: 100%;
+    }
+    75% {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0;
+    }
+}

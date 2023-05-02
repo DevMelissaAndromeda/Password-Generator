@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Gilroy-Light;
+    src: url("resources/fonts/Gilroy-Light.otf");
+}
+
+@font-face {
+    font-family: Gilroy-ExtraBold;
+    src: url("resources/fonts/Gilroy-ExtraBold.otf");
+}
+
+:root {
+    --color-60: #1f2937;
+    --color-30: #273549;
+    --color-10: #0da673;
+    --color-10-hover: #0b8159;
+    --color-10-active: #096345;
+    --color-header: #ffffff;
+    --color-font: #f0f0f0;
+}

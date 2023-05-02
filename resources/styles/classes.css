@@ -1,0 +1,76 @@
+@import "variables.css";
+@import "animations.css";
+
+
+
+
+.space {
+    margin: 4rem 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.highlight {
+    color: var(--color-10);
+}
+
+.underline {
+    border-bottom: solid 2px var(--color-font);
+}
+
+.block {
+    display: block;
+}
+
+.generated-password-field {
+    border: none;
+    border-radius: 10px;
+
+    background: var(--color-30);
+    color: var(--color-10);
+
+    padding: 1rem;
+    
+    width: 36ch;
+    height: 1ch;
+
+    font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
+    text-align: center;
+    line-height: 10px;
+}
+
+.generated-password-field:hover {
+    background-color: var(--color-10-hover);
+    cursor: pointer;
+}
+
+.generated-password-field:active {
+    background-color: var(--color-10-active);
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 1rem;
+    
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.grid__item {
+    display: flex;
+    align-items: center;
+
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1rem 1rem 1rem 1rem;
+    }
+}
