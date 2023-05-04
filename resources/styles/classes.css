@@ -14,6 +14,10 @@
     align-content: center;
 }
 
+.center-item {
+    margin: auto;
+}
+
 .border {
     border: solid 5px var(--color-header);
     border-radius: 25px;

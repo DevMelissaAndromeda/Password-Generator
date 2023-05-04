@@ -3,6 +3,10 @@
 
 
 
+#actual-body {
+    height: fit-content;
+}
+
 #popup {
     pointer-events: none; 
 
