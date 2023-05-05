@@ -8,6 +8,12 @@
     font-size: 18px;
 }
 
+*::selection {
+    color: var(--color-60);
+    background: var(--color-selection);
+    text-shadow: 2px 2px 5px var(--color-60);
+}
+
 html {
     width: 100%;
     height: 100%;
