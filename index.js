@@ -1,10 +1,20 @@
 const CHARACTERS =  ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9','~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','[','}',']',',','|',':',';','<','>','.','?',
 '/'];
 
-const centeredBodyEl        = document.getElementById('actual-body');
-const passwordCountEl       = document.getElementById('password-count');
-const characterCountEl      = document.getElementById('character-count');
-const generatedPasswordsEl  = document.getElementById('generated-passwords');
+
+const CONTEXT_MENU = 'context-menu';
+
+
+const el_centeredBody            = document.getElementById('actual-body');
+const el_passwordCount           = document.getElementById('password-count');
+const el_characterCount          = document.getElementById('character-count');
+const el_generatedPasswords      = document.getElementById('generated-passwords');
+const el_btnGeneratePasswords    = document.getElementById('btn-generatePasswords');
+
+
+el_passwordCount.addEventListener('change', function() { validateInputRange(this, 1, 10); });
+el_characterCount.addEventListener('change', function() { validateInputRange(this, 16, 32); });
+el_btnGeneratePasswords.addEventListener('click', generatePasswords);
 
 
 const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
@@ -12,15 +22,15 @@ const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
 
 function showContextMenu(message)
 {
-    const   old_showContextMenuEl_Instance_To_Delete    = document.getElementById('showContextMenu');
+    const   old_showContextMenuEl_Instance_To_Delete    = document.getElementById(CONTEXT_MENU);
             old_showContextMenuEl_Instance_To_Delete    .remove();
 
-    const   new_showContextMenuEl_Instance            = document.createElement('h1');
-            new_showContextMenuEl_Instance            .textContent = message;
-            new_showContextMenuEl_Instance            .id = 'showContextMenu';
-            new_showContextMenuEl_Instance            .style.animation = 'showContextMenu 3s forwards';
+    const   new_showContextMenuEl_Instance              = document.createElement('h1');
+            new_showContextMenuEl_Instance              .textContent = message;
+            new_showContextMenuEl_Instance              .id = CONTEXT_MENU;
+            new_showContextMenuEl_Instance              .style.animation = `${CONTEXT_MENU} 3s forwards`;
 
-    centeredBodyEl.appendChild(new_showContextMenuEl_Instance);   
+    el_centeredBody.appendChild(new_showContextMenuEl_Instance);   
 }
 
 function copyToClipboard(value)
@@ -38,7 +48,7 @@ function validateInputRange(inputEl, min, max)
 
 function clearPreviousPasswords()
 {
-    generatedPasswordsEl.innerHTML = '';
+    el_generatedPasswords.innerHTML = '';
 }
 
 function addNewPassword(newPassword)
@@ -49,18 +59,18 @@ function addNewPassword(newPassword)
     new_Generated_PasswordEl_Instance          .className = 'generated-password-field';
     new_Generated_PasswordEl_Instance          .addEventListener('click', function() { copyToClipboard(newPassword); });
     
-    generatedPasswordsEl.append(new_Generated_PasswordEl_Instance);
+    el_generatedPasswords.append(new_Generated_PasswordEl_Instance);
 }
 
 function generatePasswords()
 {
     clearPreviousPasswords();
 
-    for (let i = 0; i < passwordCountEl.value; i++)
+    for (let i = 0; i < el_passwordCount.value; i++)
     {
         let newPassword = '';
       
-        for (let j = 0; j < characterCountEl.value; j++)
+        for (let j = 0; j < el_characterCount.value; j++)
         {
             const randomlyChosenCharacter = CHARACTERS[ 
                 Math.floor( 
