@@ -1,35 +1,36 @@
-const characters =  ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9','~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','[','}',']',',','|',':',';','<','>','.','?',
+const CHARACTERS =  ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9','~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','[','}',']',',','|',':',';','<','>','.','?',
 '/'];
 
-const centeredBodyEl = document.getElementById('actual-body');
-const passwordCountEl = document.getElementById('password-count');
-const characterCountEl = document.getElementById('character-count');
-const generatedPasswordsEl = document.getElementById('generated-passwords');
+const centeredBodyEl        = document.getElementById('actual-body');
+const passwordCountEl       = document.getElementById('password-count');
+const characterCountEl      = document.getElementById('character-count');
+const generatedPasswordsEl  = document.getElementById('generated-passwords');
 
 
 const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
 
 
-function popup(message)
+function showContextMenu(message)
 {
-    const old_PopupEl_Instance_To_Delete    = document.getElementById('popup');
-    old_PopupEl_Instance_To_Delete          .remove();
+    const   old_showContextMenuEl_Instance_To_Delete    = document.getElementById('showContextMenu');
+            old_showContextMenuEl_Instance_To_Delete    .remove();
 
-    const   new_PopupEl_Instance            = document.createElement('h1');
-            new_PopupEl_Instance            .textContent = message;
-            new_PopupEl_Instance            .id = 'popup';
-            new_PopupEl_Instance            .style.animation = 'popup 3s forwards';
+    const   new_showContextMenuEl_Instance            = document.createElement('h1');
+            new_showContextMenuEl_Instance            .textContent = message;
+            new_showContextMenuEl_Instance            .id = 'showContextMenu';
+            new_showContextMenuEl_Instance            .style.animation = 'showContextMenu 3s forwards';
 
-    centeredBodyEl.appendChild(new_PopupEl_Instance);
+    centeredBodyEl.appendChild(new_showContextMenuEl_Instance);   
 }
 
 function copyToClipboard(value)
 {
     navigator.clipboard.writeText(value);
 
-    popup('Copied password to Clipboard.');
+    showContextMenu('Copied password to Clipboard.');
 }
 
+// Provided via DOM element
 function validateInputRange(inputEl, min, max)
 {
     inputEl.value = clamp(inputEl.value, min, max);
@@ -61,7 +62,12 @@ function generatePasswords()
       
         for (let j = 0; j < characterCountEl.value; j++)
         {
-            let randomlyChosenCharacter = characters[ Math.floor( Math.random() * characters.length ) ];
+            const randomlyChosenCharacter = CHARACTERS[ 
+                Math.floor( 
+                    Math.random() * CHARACTERS.length 
+                    ) 
+                ];
+
             newPassword += randomlyChosenCharacter;
         }
 

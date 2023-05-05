@@ -56,7 +56,7 @@
     animation: "";
 }
 
-@keyframes popup {
+@keyframes context-menu {
     from {
         opacity: 0;
     }
