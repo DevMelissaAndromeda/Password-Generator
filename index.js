@@ -56,7 +56,7 @@ function addNewPassword(newPassword)
     const new_Generated_PasswordEl_Instance    = document.createElement('p');
 
     new_Generated_PasswordEl_Instance          .textContent = newPassword;
-    new_Generated_PasswordEl_Instance          .className = 'generated-password-field';
+    new_Generated_PasswordEl_Instance          .className = 'generated-password-field center';
     new_Generated_PasswordEl_Instance          .addEventListener('click', function() { copyToClipboard(newPassword); });
     
     el_generatedPasswords.append(new_Generated_PasswordEl_Instance);

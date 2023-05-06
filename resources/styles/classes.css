@@ -38,6 +38,7 @@
 }
 
 .generated-password-field {
+    margin-top: 1.5rem;
     border: none;
     border-radius: 10px;
 
@@ -46,7 +47,7 @@
 
     padding: 1rem;
     
-    width: 36ch;
+    width: auto;
     height: 1ch;
 
     font-family: Gilroy-ExtraBold, Arial, Helvetica, sans-serif;
@@ -54,21 +55,6 @@
     line-height: 10px;
 
     animation: "";
-}
-
-@keyframes context-menu {
-    from {
-        opacity: 0;
-    }
-    25% {
-        opacity: 100%;
-    }
-    75% {
-        opacity: 100%;
-    }
-    to {
-        opacity: 0;
-    }
 }
 
 .generated-password-field:hover {
@@ -99,6 +85,6 @@
 @media only screen and (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 1rem 1rem 1rem 1rem;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
     }
 }
