@@ -10,7 +10,7 @@
 #context-menu {
     pointer-events: none; 
 
-    position: absolute;
+    position: fixed;
     left: 0; 
     right: 0; 
     margin-left: auto; 
@@ -19,7 +19,7 @@
 
     text-align: center;
 
-    bottom: 20%;
+    bottom: 10vh;
 
     padding: 1rem 2rem 1rem 1.5rem;
 
