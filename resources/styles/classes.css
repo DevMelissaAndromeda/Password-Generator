@@ -29,6 +29,10 @@
     color: var(--color-10);
 }
 
+.highlight::selection {
+    text-decoration: underline;
+}
+
 .underline {
     border-bottom: solid 2px var(--color-font);
 }
