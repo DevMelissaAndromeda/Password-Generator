@@ -20,6 +20,28 @@ el_btnGeneratePasswords.addEventListener('click', generatePasswords);
 const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
 
 
+
+start();
+
+function start()
+{
+    const el_inputFields = document.querySelectorAll('input');
+    
+    for (let i = 0; i <= el_inputFields.length; i++)
+    {
+        const savedValue = localStorage.getItem(el_inputFields[i].id);
+        
+        if (savedValue == null)
+        {
+            savedValue = el_inputFields[i].min;
+        }
+
+        el_inputFields[i].value = localStorage.getItem(el_inputFields[i].id);
+    }
+}
+
+
+
 function showContextMenu(message)
 {
     const   old_showContextMenuEl_Instance_To_Delete    = document.getElementById(CONTEXT_MENU);
@@ -44,6 +66,8 @@ function copyToClipboard(value)
 function validateInputRange(inputEl, min, max)
 {
     inputEl.value = clamp(inputEl.value, min, max);
+
+    localStorage.setItem(inputEl.id, inputEl.value);
 }
 
 function clearPreviousPasswords()
