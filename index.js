@@ -29,14 +29,15 @@ function start()
     
     for (let i = 0; i <= el_inputFields.length; i++)
     {
+        if (el_inputFields[i] === undefined)
+            return;
+
         const savedValue = localStorage.getItem(el_inputFields[i].id);
         
-        if (savedValue == null)
-        {
+        if (savedValue === null)
             savedValue = el_inputFields[i].min;
-        }
 
-        el_inputFields[i].value = localStorage.getItem(el_inputFields[i].id);
+        el_inputFields[i].value = savedValue;
     }
 }
 
