@@ -16,6 +16,7 @@
     --color-10-washed-out: #3e9b7e;
     --color-10-hover: #0b8159;
     --color-10-active: #096345;
-    --color-header: #ffffff;
+    --color-header: #f0f0f0;
     --color-font: #f0f0f0;
+    --color-font-washed-out: #bababa;
 }
