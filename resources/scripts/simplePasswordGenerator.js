@@ -81,10 +81,8 @@ function generatePasswords()
         for (let j = 0; j < el_characterCount.value; j++)
         {
             const randomlyChosenCharacter = CHARACTERS[ 
-                Math.floor( 
-                    Math.random() * CHARACTERS.length 
-                    ) 
-                ];
+                Math.floor( Math.random() * CHARACTERS.length ) 
+            ];
 
             newPassword += randomlyChosenCharacter;
         }
