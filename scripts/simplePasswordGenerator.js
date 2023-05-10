@@ -17,9 +17,6 @@ el_characterCount.addEventListener('change', function() { validateInputRange(thi
 el_btnGeneratePasswords.addEventListener('click', generatePasswords);
 
 
-const clamp = (number, min, max) => Math.min( Math.max(number, min), max );
-
-
 
 start();
 
@@ -32,7 +29,7 @@ function start()
         if (el_inputFields[i] === undefined)
             return;
 
-        const savedValue = localStorage.getItem(el_inputFields[i].id);
+        let savedValue = localStorage.getItem(el_inputFields[i].id);
         
         if (savedValue === null)
             savedValue = el_inputFields[i].min;
@@ -56,21 +53,6 @@ function showContextMenu(message)
     el_centeredBody.appendChild(new_showContextMenuEl_Instance);   
 }
 
-function copyToClipboard(value)
-{
-    navigator.clipboard.writeText(value);
-
-    showContextMenu('Copied password to Clipboard.');
-}
-
-// Provided via DOM element
-function validateInputRange(inputEl, min, max)
-{
-    inputEl.value = clamp(inputEl.value, min, max);
-
-    localStorage.setItem(inputEl.id, inputEl.value);
-}
-
 function clearPreviousPasswords()
 {
     el_generatedPasswords.innerHTML = '';
@@ -82,7 +64,10 @@ function addNewPassword(newPassword)
 
     new_Generated_PasswordEl_Instance          .textContent = newPassword;
     new_Generated_PasswordEl_Instance          .className = 'generated-password-field center';
-    new_Generated_PasswordEl_Instance          .addEventListener('click', function() { copyToClipboard(newPassword); });
+    new_Generated_PasswordEl_Instance          .addEventListener('click', function() {
+                                                                            copyToClipboard(newPassword);
+                                                                            showContextMenu(`Copied password to Clipboard.`);
+                                                                        });
     
     el_generatedPasswords.append(new_Generated_PasswordEl_Instance);
 }
