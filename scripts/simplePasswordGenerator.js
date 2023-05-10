@@ -24,14 +24,16 @@ function start()
 {
     const el_inputFields = document.querySelectorAll('input');
 
-    el_inputFields.forEach(inputField => {
-        let savedValue = localStorage.getItem(
-            inputField.id, 
-            inputField.min
-        );
+    el_inputFields.forEach(
+        inputField => {
+            let savedValue = localStorage.getItem(
+                inputField.id, 
+                inputField.min
+            );
 
-        inputField.value = savedValue;
-    });
+            inputField.value = savedValue;
+        }
+    );
 }
 
 
