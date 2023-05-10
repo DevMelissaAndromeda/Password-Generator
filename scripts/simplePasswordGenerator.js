@@ -77,16 +77,20 @@ function generatePasswords()
     for (let i = 0; i < el_passwordCount.value; i++)
     {
         let newPassword = '';
+        let lastChosenCharacter = '';
       
         for (let j = 0; j < el_characterCount.value; j++)
         {
-            const randomlyChosenCharacter = CHARACTERS[ 
-                Math.floor( 
-                    Math.random() * CHARACTERS.length 
-                    ) 
-                ];
+            let randomIndex = Math.floor( Math.random() * CHARACTERS.length );
 
-            newPassword += randomlyChosenCharacter;
+            // Verifies if 2 adjancent characters are the same
+            if (CHARACTERS[randomIndex] == lastChosenCharacter)
+            {
+                randomIndex = CHARACTERS.length - 1;
+            }
+
+            lastChosenCharacter = CHARACTERS[randomIndex];
+            newPassword += CHARACTERS[randomIndex];
         }
 
         addNewPassword(newPassword);
