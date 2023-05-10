@@ -23,16 +23,15 @@ start();
 function start()
 {
     const el_inputFields = document.querySelectorAll('input');
-    
-    for (let i = 0; i < el_inputFields.length; i++)
-    {
+
+    el_inputFields.forEach(inputField => {
         let savedValue = localStorage.getItem(
-            el_inputFields[i].id, 
-            el_inputFields[i].min
+            inputField.id, 
+            inputField.min
         );
 
-        el_inputFields[i].value = savedValue;
-    }
+        inputField.value = savedValue;
+    });
 }
 
 
