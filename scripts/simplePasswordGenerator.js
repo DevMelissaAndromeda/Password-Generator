@@ -24,15 +24,12 @@ function start()
 {
     const el_inputFields = document.querySelectorAll('input');
     
-    for (let i = 0; i <= el_inputFields.length; i++)
+    for (let i = 0; i < el_inputFields.length; i++)
     {
-        if (el_inputFields[i] === undefined)
-            return;
-
-        let savedValue = localStorage.getItem(el_inputFields[i].id);
-        
-        if (savedValue === null)
-            savedValue = el_inputFields[i].min;
+        let savedValue = localStorage.getItem(
+            el_inputFields[i].id, 
+            el_inputFields[i].min
+        );
 
         el_inputFields[i].value = savedValue;
     }
